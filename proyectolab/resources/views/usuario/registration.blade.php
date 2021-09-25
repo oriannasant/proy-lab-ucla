@@ -13,22 +13,29 @@
        <link rel="stylesheet" href="css/style.css">
   
   </head>
-  <body class="login">
+  <body>
   <nav class="navbar navbar-dark bg-dark">
           <div>
                       <p>Registro de Usuario</p>
           </div>
           
   </nav>
-          
+  @if(session('datos'))
+  <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+      {{ session('datos') }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times</span>
+      </button>
+  </div>
+  @endif
                  <br />
           <div class="content">
  
-          <form method="POST" action="{{route('user.registernewuser')}}">
-            @csrf
+          <form method="POST" action="/users">
+            
                   <h4 class="form-title">Registrar Usuario</h4>
                 
-
+                  @csrf
                         <div class="form-group">
                                 <label for="">Nombre:</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nombre" name="name" value="{{old('name')}}">
@@ -49,6 +56,21 @@
                                 @enderror
                               
                               </div>
+
+
+                            </div>
+                            <div class="form-group">
+                              <label for="">Cedula:</label>
+                              <input type="text" class="form-control @error('identification') is-invalid @enderror" id="identification" placeholder="Cedula" name="identification" value="{{old('identification')}}">
+                              @error('identification')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{$message}}</strong>
+                              </span>
+                              @enderror
+                            
+                            </div>
+
+
                               <div class="form-group">
                                 <label for="">Telefono:</label>
                                   <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telefono" name="telephone" value="{{old('telephone')}}">
@@ -102,19 +124,46 @@
                           @enderror
                         </div>
 
-                      <!---  //'role'=> '1','program'=> '2',  que sean un desplegable-->
-              <!---'status'=> 'A' sea un input ya puesto por defecto en A-->
-                       
-                  <hr />
-                  <div class="form-actions">
-                      <button class="btn btn-success btn-block">
-                           Registrar </button>
-                  </div>
-                  <hr />
+
+
+
+                        <div class="form-group">
+                          <label for="">Rol:</label>
+                            <input type="text" class="form-control @error('role') is-invalid @enderror" id="role" placeholder="Rol" name="role" value="{{old('role')}}">
+                            @error('role')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{$message}}</strong>
+                            </span>
+                            @enderror
+                          
                           </div>
+
+
+
+                          <div class="form-group">
+                            <label for="">Programa:</label>
+                              <input type="text" class="form-control @error('program') is-invalid @enderror" id="program" placeholder="Programa" name="program" value="{{old('program')}}">
+                              @error('program')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{$message}}</strong>
+                              </span>
+                              @enderror
+                            
+                            </div>
+                     
+                            <div class="form-group">
+     
+                              <input id="status" name="status" type="hidden" value="A">
+                            </div>
+                  <hr />
+              
+                    <button type="submit" class="btn btn-primary" >Guardar</button>
+                    
+                 
+                  <hr />
+                         
               </form>
           </div>
-  
   
   </body>
   </html>

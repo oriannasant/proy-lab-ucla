@@ -18,16 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+//->middleware('auth')
+Route::post('/','App\Http\Controllers\UserController@login')
+->name('user.login');
 
-Route::post('/','App\Http\Controllers\UserController@login')->name('user.login');
-
-Route::get('/register','App\Http\Controllers\RegisterController@register')->name('user.register');
-//revisar el /
-Route::post('/registernewuser','App\Http\Controllers\RegisterController@registerUser')->name('user.registernewuser');
+//Route::get('/','App\Http\Controllers\UserController@login')->name('login.index');
+//->middleware('guest')
 
 Route::post('/logout','App\Http\Controllers\UserController@logout')->name('user.logout');
+//->middleware('auth')
+
+Route::resource('pensums','App\Http\Controllers\PensumController');
+
+Route::get('/registerpensum','App\Http\Controllers\PensumController@index')->name('pensum.registerpensum');
 
 
+Route::resource('users','App\Http\Controllers\UserRegisterController');
 
-Route::get('/reseteo','App\Http\Controllers\ForgotPasswordController@getEmail')->name('user.reseteo');
-
+Route::get('/register','App\Http\Controllers\UserRegisterController@create')->name('user.register');

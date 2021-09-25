@@ -31,15 +31,8 @@
         <!--COLOCAR AQUI EL MENU DE OPCIONES -->
 
 
-
-
-
-
-
-
-
         @if(session('datos'))
-        <!--msj de guadado que viene del register-->
+  
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
             {{ session('datos') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -49,9 +42,12 @@
         @endif
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
           
-         
+           
             @csrf
             <a class ="btn btn-link" href="{{route('user.register')}}">Register</a> 
+
+            @csrf
+            <a class ="btn btn-link" href="{{route('pensum.registerpensum')}}">Register Pensum</a> 
 
             <form method="POST" action="{{route('user.logout')}}">
 

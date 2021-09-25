@@ -30,10 +30,10 @@ public function login(Request $request){
      if($query->count() !=0){
          
  
-       //  $hashp = $query[0]->password;
-        // $password = $request->get('password');
+         $hashp = $query[0]->password;
+         $password = $request->get('password');
  
-       //  if(password_verify($password,$hashp)){
+         if(password_verify($password,$hashp)){
                 //si lo consigue y la contraseña es correcta
                 //validar que tipo de rol tiene
                             $rol = $query[0]->role;
@@ -43,9 +43,9 @@ public function login(Request $request){
                                 }else{
                                     return view('welcome');
                                 }
-       //  }else {
-       //      return back()->withErrors(['password'=>'Incorrecta contraseña'])->withInput([request('password')]);
-       //  }
+         }else {
+             return back()->withErrors(['password'=>'Incorrecta contraseña'])->withInput([request('password')]);
+         }
      }
          else {
              //no se consiguio el usuario en la base de datos
