@@ -8,8 +8,15 @@
 
         <!-- Fonts -->
         <link href="" rel="stylesheet">
+        <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+        <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
-        <!-- Styles -->
+        <!-- Styles 
         <style>
             /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
             html{line-height:1.15;-webkit-text-size-adjust:100%}body
@@ -25,38 +32,52 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        -->
+
     </head>
     <body class="antialiased">
 
-        <!--COLOCAR AQUI EL MENU DE OPCIONES -->
+            
+                
+        <nav class="navbar navbar-dark bg-primary justify-content-end">
+            
+            <h6>Hola Administrador, Bienvenido</h6>
 
+            <h4>|</h4>
 
-        @if(session('datos'))
+            <ul class="nav">
+            @if(session('datos'))
   
-        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-            {{ session('datos') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times</span>
-            </button>
-        </div>
-        @endif
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-          
-           
-            @csrf
-            <a class ="btn btn-link" href="{{route('user.register')}}">Register</a> 
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    {{ session('datos') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times</span>
+                    </button>
+                </div>
+            @endif
+                           
+                @csrf
+                <li class="nav-item">
+                    <a class="nav-link  " aria-current="page" href="{{route('user.register')}}">Registrar Usuario</a>
+                </li>
 
-            @csrf
-            <a class ="btn btn-link" href="{{route('pensum.registerpensum')}}">Register Pensum</a> 
+                @csrf
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{route('pensum.registerpensum')}}">Registrar Pensum</a>
+                </li>
 
-            <form method="POST" action="{{route('user.logout')}}">
-
-                     @csrf
-                    <a href="#" class="ml-1 underline" onclick="this.closest('form').submit()">Logout</a>
-         
-            </form>      
-
-                    
-        </div>
+                <form method="POST" action="{{route('user.logout')}}">
+                    @csrf
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" onclick="this.closest('form').submit()">Salir</a>
+                    </li>
+                </form>
+            
+            </ul>
+        </nav>     
+        <script src="{{asset('js/app.js')}}"></script>
+        <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
+        <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/adminlte/dist/js/adminlte.min.js"></script>
     </body>
 </html>

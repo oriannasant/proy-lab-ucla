@@ -63,9 +63,7 @@
                         <button class="btn btn-primary btn-block"> <b>Ingresar</b> </button>
                     </div>
 
-                    <div>
-                        <a href="#"> <h5>He olvidado mi contraseña</h5> </a>
-                    </div>
+                    
                 </form>
             </div>
             

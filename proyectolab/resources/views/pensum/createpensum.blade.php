@@ -13,41 +13,40 @@
 
 </head>
 <body >
-      
-    <h2>CREAR REGISTROS</h2>
+    <div class="container"> 
+      <h2 style="margin-top: 20px;">CREAR REGISTROS</h2>
    
-    <form method="POST" action="/pensums">
+      <form method="POST" action="/pensums">
   
         @csrf
-      <div class="mb-3">
+        <div class="mb-3">
+          <label for="" class="form-label">Código del Programa:</label>
+          <input id="id_program" name="id_program" type="number" class="form-control" tabindex="1">    
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Descripción:</label>
+          <input id="descrip_pensum" name="descrip_pensum" type="text" class="form-control" tabindex="2">
+        </div>
+
+        <div class="mb-3">
+          <label for="" class="form-label">Fecha:</label>
+          <input id="date" name="date" type="date" class="form-control">
+        </div>
+        <div class="mb-3">
+          <input id="status" name="status" type="hidden" value="A">
+        </div>
         
-        <label for="" class="form-label">Código del Programa:</label>
-        <input id="id_program" name="id_program" type="number" class="form-control" tabindex="1">    
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Descripción:</label>
-        <input id="descrip_pensum" name="descrip_pensum" type="text" class="form-control" tabindex="2">
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Fecha:</label>
-        <input id="date" name="date" type="date" class="form-control">
-      </div>
-      <div class="mb-3">
-     
-        <input id="status" name="status" type="hidden" value="A">
-      </div>
-      <a href="/pensums" class="btn btn-secondary" tabindex="5">Cancelar</a>
-      
-     
-      <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
-    </form>
+        <a href="/pensums" class="btn btn-secondary" tabindex="5">Cancelar</a>
+        <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
+      </form>
     
+    </div>
+    <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
+    <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/adminlte/dist/js/adminlte.min.js"></script>
 
-        <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
-        <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/adminlte/dist/js/adminlte.min.js"></script>
-
-</body>
+  </body>
 </html>

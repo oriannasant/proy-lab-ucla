@@ -11,76 +11,86 @@
        <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
        <link rel="stylesheet" href="css/login.css">
        <link rel="stylesheet" href="css/style.css">
+       <link rel="stylesheet" href="css/menu.css">
   
   </head>
   <body>
-  <nav class="navbar navbar-dark bg-dark">
-          <div>
-                      <p>Registro de Usuario</p>
-          </div>
-          
-  </nav>
-  @if(session('datos'))
-  <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-      {{ session('datos') }}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times</span>
-      </button>
-  </div>
-  @endif
+    <nav class="navbar navbar-dark bg-primary justify-content-end">
+            
+            <h6>Registrar Usuario</h6>
+
+            <h4>|</h4>
+
+            <ul class="nav">
+                
+                   
+              <li class="nav-item ">
+                 <a class="nav-link" href="#" >Volver</a>
+              </li>
+                
+            
+            </ul>
+    </nav>
+    
+    @if(session('datos'))
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        {{ session('datos') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times</span>
+        </button>
+    </div>
+    @endif
                  <br />
-          <div class="content">
+        <div class=" container">
  
           <form method="POST" action="/users">
             
-                  <h4 class="form-title">Registrar Usuario</h4>
+            <h4 class="form-title">Registrar Usuario</h4>
                 
-                  @csrf
-                        <div class="form-group">
-                                <label for="">Nombre:</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nombre" name="name" value="{{old('name')}}">
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{$message}}</strong>
-                                </span>
-                                @enderror
+              @csrf
+                <div class="form-group">
+                  <label for="">Nombre:</label>
+                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nombre" name="name" value="{{old('name')}}">
+                  @error('name')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{$message}}</strong>
+                  </span>
+                  @enderror
+                </div>
                               
-                              </div>
-                              <div class="form-group">
-                                <label for="">Apellido:</label>
-                                <input type="text" class="form-control @error('surname') is-invalid @enderror" id="surname" placeholder="Apellido" name="surname" value="{{old('surname')}}">
-                                @error('surname')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{$message}}</strong>
-                                </span>
-                                @enderror
+                <div class="form-group">
+                  <label for="">Apellido:</label>
+                  <input type="text" class="form-control @error('surname') is-invalid @enderror" id="surname" placeholder="Apellido" name="surname" value="{{old('surname')}}">
+                  @error('surname')
+                  <span class="invalid-feedback" role="alert">
+                  <strong>{{$message}}</strong>
+                  </span>
+                  @enderror
                               
-                              </div>
+                </div>
 
 
-                            </div>
-                            <div class="form-group">
-                              <label for="">Cedula:</label>
-                              <input type="text" class="form-control @error('identification') is-invalid @enderror" id="identification" placeholder="Cedula" name="identification" value="{{old('identification')}}">
-                              @error('identification')
-                              <span class="invalid-feedback" role="alert">
-                                  <strong>{{$message}}</strong>
-                              </span>
-                              @enderror
-                            
-                            </div>
+                
+                <div class="form-group">
+                  <label for="">Cedula:</label>
+                  <input type="text" class="form-control @error('identification') is-invalid @enderror" id="identification" placeholder="Cedula" name="identification" value="{{old('identification')}}">
+                  @error('identification')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{$message}}</strong>
+                  </span>
+                  @enderror     
+                  </div>
 
 
-                              <div class="form-group">
-                                <label for="">Telefono:</label>
-                                  <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telefono" name="telephone" value="{{old('telephone')}}">
-                                  @error('telephone')
-                                  <span class="invalid-feedback" role="alert">
-                                      <strong>{{$message}}</strong>
-                                  </span>
-                                  @enderror
-                                
-                                </div>
+                <div class="form-group">
+                  <label for="">Telefono:</label>
+                  <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telefono" name="telephone" value="{{old('telephone')}}">
+                  @error('telephone')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{$message}}</strong>
+                  </span>
+                  @enderror
+                </div>
 
 
                               <div class="form-group">
@@ -163,7 +173,7 @@
                   <hr />
                          
               </form>
-          </div>
+        </div>
   
   </body>
   </html>
