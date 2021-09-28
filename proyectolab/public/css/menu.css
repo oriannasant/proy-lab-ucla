@@ -1,0 +1,36 @@
+/***CSS del NavBar***/ 
+
+.antialiased{
+    background-image: url(../image/FondoMenu.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+nav ul h4{
+    font-size: 32px;
+    margin: 0%;
+}
+
+nav ul h6{
+    margin: 8px 15px 0px 0px;
+    font-size: 20px;
+
+}
+.nav-item a{
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif
+}
+.nav-item a:hover{
+    color: rgb(15, 97, 221);
+}
+
+.offcanvas-body .nav-item a{
+    text-align: end;
+    font-size: 26px;
+    
+}
+
+.offcanvas-header h5{
+    font-size: 30px;
+}
