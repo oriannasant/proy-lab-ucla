@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
 	 <meta charset="utf-8"/>
      <title>Registro Académico del DCYT</title>
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +11,8 @@
      <link rel="stylesheet" href="css/login.css">
      <link rel="stylesheet" href="css/style.css">
 
-</head>
-<body class="login">
+    </head>
+    <body class="login">
        
         
         <div class="content">
@@ -68,7 +68,7 @@
             </div>
             
             <div class="benv container-fluid">
-                <img src="/proyectolab/public/image/UclaLogo.png" alt="Logo">
+                <br>
                 <h1><b>Bienvenido/a.</b></h1>
                 <h3>Te damos la bienvenida al sistema de registro de pensum del programa de Registro Academico de la Universidad Centrooccidental "Lisandro Alvarado"</h3>
                 <h3>Un entorno amigable y fácil de usar para hacer que tus gestión de pensum sea tan eficiente como sea posible</h3>
@@ -81,6 +81,10 @@
            
         </div>
 
+        <footer class="copyright">
+            <i class="fas fa-copyright"> Todos los derechos reservados</i> 
+        </footer>
+
         
         <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
         <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -88,5 +92,5 @@
         <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/adminlte/dist/js/adminlte.min.js"></script>
 
-</body>
+    </body>
 </html>
