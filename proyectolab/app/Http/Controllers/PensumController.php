@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Pensum;
-use Illuminate\Http\Request;
-
+//use Illuminate\Http\Request;
+use App\Http\Requests\PensumRequest;
 class PensumController extends Controller
 {
     /**
@@ -14,7 +14,9 @@ class PensumController extends Controller
     public function index()
     {
         
-        //return 'Vista index()';
+       
+        //cargar los pensums segun programa ya que el usuario que ingrese
+        //no puede ver los pensums de otros progrmas que no sea el de el
         $pensums = Pensum::all();
         //return view('registrationpensum')->with('pensums',$pensums);
         return view('pensum.registrationpensum')->with('pensums',$pensums);
@@ -39,7 +41,7 @@ class PensumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PensumRequest $request)
     {
         //
         $pensums = new Pensum();
@@ -84,7 +86,7 @@ class PensumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PensumRequest $request, $id)
     {
         //
         $pensum = Pensum::find($id);

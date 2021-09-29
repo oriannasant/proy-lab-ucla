@@ -59,47 +59,47 @@
 
 
                 
-        <div class="form-group">
-          <label for="">Cedula:</label>
-          <input type="text" class="form-control @error('identification') is-invalid @enderror" id="identification" placeholder="Cedula" name="identification" value="{{old('identification')}}">
-          @error('identification')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{$message}}</strong>
-            </span>
-          @enderror     
-        </div>
+                <div class="form-group">
+                  <label for="">Cédula:</label>
+                  <input type="text" class="form-control @error('identification') is-invalid @enderror" id="identification" placeholder="Cedula" name="identification" value="{{old('identification')}}">
+                  @error('identification')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{$message}}</strong>
+                  </span>
+                  @enderror     
+                  </div>
 
 
-        <div class="form-group">
-          <label for="">Telefono:</label>
-          <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telefono" name="telephone" value="{{old('telephone')}}">
-          @error('telephone')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{$message}}</strong>
-            </span>
-           @enderror
-        </div>
+                <div class="form-group">
+                  <label for="">Teléfono:</label>
+                  <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone" placeholder="Telefono" name="telephone" value="{{old('telephone')}}">
+                  @error('telephone')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{$message}}</strong>
+                  </span>
+                  @enderror
+                </div>
 
 
-        <div class="form-group">
-          <label for="">Nombre de Usuario:</label>
-          <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Example1234" name="username" value="{{old('username')}}">
-          @error('username')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{$message}}</strong>
-            </span>
-          @enderror            
-        </div>
+                              <div class="form-group">
+                                <label for="">Nombre de Usuario:</label>
+                                <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" placeholder="Example1234" name="username" value="{{old('username')}}">
+                                @error('username')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{$message}}</strong>
+                                </span>
+                                @enderror
+                              
+                              </div>
 
-        <div class="form-group">
-          <label for="">Correo Electronico:</label>
-          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Email" name="email" value="{{old('email')}}">
-          @error('email')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{$message}}</strong>
-            </span>
-          @enderror
-        </div>
+                        <div class="form-group">
+                        <label for="">Correo Electrónico:</label>
+                          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp" placeholder="Email" name="email" value="{{old('email')}}">
+                          @error('email')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{$message}}</strong>
+                          </span>
+                          @enderror
                         
                         
         <div class="form-group">

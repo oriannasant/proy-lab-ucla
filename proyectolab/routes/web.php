@@ -21,18 +21,34 @@ Route::get('/', function () {
 //->middleware('auth')
 Route::post('/','App\Http\Controllers\UserController@login')
 ->name('user.login');
+//admin
+//Route::get('/welcome','App\Http\Controllers\RolController@view')->name('rol.welcome');
 
-//Route::get('/','App\Http\Controllers\UserController@login')->name('login.index');
-//->middleware('guest')
 
-Route::post('/logout','App\Http\Controllers\UserController@logout')->name('user.logout');
-//->middleware('auth')
+Route::post('/logout','App\Http\Controllers\UserController@logout')
+->middleware('auth')
+->name('user.logout');
 
 Route::resource('pensums','App\Http\Controllers\PensumController');
 
 Route::get('/registerpensum','App\Http\Controllers\PensumController@index')->name('pensum.registerpensum');
 
 
-Route::resource('users','App\Http\Controllers\UserRegisterController');
+Route::resource('programs','App\Http\Controllers\ProgramController');
 
-Route::get('/register','App\Http\Controllers\UserRegisterController@create')->name('user.register');
+Route::get('/registerprogram','App\Http\Controllers\ProgramController@index')->name('program.registerprogram');
+
+
+Route::resource('users','App\Http\Controllers\UserRegisterController');
+//->middleware('admin')
+
+
+
+Route::get('/register', function () {
+    return view('usuario.registration');
+})->name('user.register');
+/*
+->middleware('admin')
+Route::get('/register','App\Http\Controllers\UserRegisterController@create')
+->middleware('admin')
+->name('user.register');*/
