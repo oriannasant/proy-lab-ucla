@@ -36,13 +36,13 @@ public function login(Request $request){
          if(password_verify($password,$hashp)){
                 //si lo consigue y la contraseña es correcta
                 //validar que tipo de rol tiene
-                            $rol = $query[0]->role;
-                                if($rol ==1){
+                          //  $rol = $query[0]->role;
+                          //      if($rol ==1){
                                 //entra
                                     return view('welcomeAdmin');
-                                }else{
-                                    return view('welcome');
-                                }
+                              //  }else{
+                              //      return view('welcome');
+                              //  }
          }else {
              return back()->withErrors(['password'=>'Incorrecta contraseña'])->withInput([request('password')]);
          }

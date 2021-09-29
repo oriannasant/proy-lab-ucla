@@ -77,6 +77,9 @@ class UserRegisterController extends Controller
     public function edit($id)
     {
         //
+        $user = User::find($id);
+        return view('usuario.edituser')->with('user',$user);
+        
     }
 
     /**
@@ -89,6 +92,21 @@ class UserRegisterController extends Controller
     public function update(LoginRequest $request, $id)
     {
         //
+        $user = User::find($id);
+        $user->username= $request -> get('username');
+        $user->name =$request->get('name');
+        $user->surname =$request->get('surname');
+        $user->identification =$request->get('identification');
+        $user->telephone =$request->get('telephone');
+        $user->email =$request->get('email');
+        $user->password = $request->get('password');
+        $user->role =$request->get('role');
+        $user->program =$request->get('program');
+        $user->status =$request->get('status');
+        $user->save();
+
+       
+        return redirect('/users')->with('success','Actualizado con Exito');
     }
 
     /**
