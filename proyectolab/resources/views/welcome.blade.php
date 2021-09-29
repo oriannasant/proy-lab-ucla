@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="" rel="stylesheet">
 
-        <!-- Styles -->
+        <!-- Styles 
         <style>
             /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
             html{line-height:1.15;-webkit-text-size-adjust:100%}body
@@ -24,7 +24,8 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
-        </style>
+        </style>-->
+        
     </head>
     <body class="antialiased">
 
