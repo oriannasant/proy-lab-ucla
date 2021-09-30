@@ -42,12 +42,11 @@
 
                     <h4>|</h4>
 
-                    <form method="POST" action="{{route('user.logout')}}">
-                        @csrf
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#" onclick="this.closest('form').submit()"><i class="fas fa-sign-out-alt"> Salir</i></a>
-                        </li>
-                    </form>
+                    
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#ConfirmarSalida"><i class="fas fa-sign-out-alt"> Salir</i></a>
+                    </li>
+                    
             
                 </ul>
 
@@ -59,7 +58,30 @@
                     </div>
 
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <ul class="navbar-nav flex-grow-1 pe-3">
+                            
+
+
+                            @csrf
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-pencil-alt"><b> Gestión de Programa </b></i></a>
+                                </a>
+                                <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="{{route('program.registerprogram')}}"><i class="fas fa-book-open"> Listado de Programas</i></a></li>
+                                </ul>
+                            </li>
+
+                            @csrf
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-file-alt"><b> Gestión de Pensum </b></i></a>
+                                </a>
+                                <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="{{route('pensum.registerpensum')}}"><i class="fas fa-book-open"> Listado de Pensum</i></a></li>
+                                </ul>
+                            </li>
+
                             @csrf
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,24 +93,39 @@
                                 </ul>
                             </li>
 
-
-                            @csrf
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-alt"><b> Gestión de Pensum </b></i></a>
-                                </a>
-                                <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="pensums/create"><i class="fas fa-plus-circle"> Añadir Pensum</i></a></li>
-                                    <li><a class="dropdown-item" href="{{route('pensum.registerpensum')}}"><i class="fas fa-book-open"> Listado de Pensum</i></a></li>
-                                </ul>
-                            </li>
-
                             
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
+
+        <!-- Modal Confirmar Salida -->
+      <div class="modal fade" id="ConfirmarSalida" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-dark">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Confirmación</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 class="justify-text-center">
+                    ¿Estas seguro que desea salir?
+                </h4>
+            
+            </div>
+
+            <div class="modal-footer justify-content-end">
+                <form method="POST" action="{{route('user.logout')}}">
+                    <a href="" class="btn btn-danger" data-bs-dismiss="modal"><i class="fas fa-times"> Cancelar</i></a>
+                    @csrf
+                    <a class="btn btn-success" href="#" onclick="this.closest('form').submit()"><i class="fas fa-sign-out-alt"> Salir</i></a>
+                    
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
         @yield('MenuPrincipal')
 
