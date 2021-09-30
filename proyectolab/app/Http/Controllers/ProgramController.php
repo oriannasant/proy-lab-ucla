@@ -47,7 +47,7 @@ class ProgramController extends Controller
         $programs->status = $request->get('status');
         $programs->save();
         
-        return redirect('/programs')->with('success','Porgrama Registrado con Exito');
+        return redirect('/programs')->with('success','Programa Registrado con Exito');
     }
 
     /**

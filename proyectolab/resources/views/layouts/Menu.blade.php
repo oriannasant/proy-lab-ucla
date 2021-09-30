@@ -88,8 +88,8 @@
                                 <i class="fas fa-users"><b> Gestión de Usuario</b></i>
                                 </a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="{{route('user.register')}}"><i class="fas fa-user-plus"><b> Añadir Usuario</b></i></a></li>
-                                    <li><a class="dropdown-item" href="{{route('user.register')}}"><i class="fas fa-book-open"> Listado de Usuarios</i></a></li>
+                                  
+                                    <li><a class="dropdown-item" href="{{route('user.listar')}}"><i class="fas fa-book-open"> Listado de Usuarios</i></a></li>
                                 </ul>
                             </li>
 

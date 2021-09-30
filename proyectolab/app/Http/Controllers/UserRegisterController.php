@@ -15,8 +15,8 @@ class UserRegisterController extends Controller
     public function index()
     {
         //
-       // $users = User::all();
-        //return view('usuario.registration')->with('users',$users);
+        $users = User::all();
+        return view('usuario.listuser')->with('users',$users);
     }
 
     /**
@@ -27,8 +27,10 @@ class UserRegisterController extends Controller
     public function create()
     {
         //
-        $users = User::all();
-        return view('usuario.registration')->with('users',$users);
+        //$users = User::all();
+       // return view('usuario.registration')->with('users',$users);
+       return view('usuario.registration');
+    
     }
 
     /**
@@ -53,7 +55,8 @@ class UserRegisterController extends Controller
          $users->status =$request->get('status');
          $users->save();
         
-        return redirect('welcomeAdmin')->with('datos','REGISTRO GUARDADO');
+        //return redirect('welcomeAdmin')->with('datos','REGISTRO GUARDADO');
+        return redirect('/users')->with('success','REGISTRO GUARDADO');
  
     }
 
@@ -99,7 +102,7 @@ class UserRegisterController extends Controller
         $user->identification =$request->get('identification');
         $user->telephone =$request->get('telephone');
         $user->email =$request->get('email');
-        $user->password = $request->get('password');
+        //$user->password = $request->get('password');
         $user->role =$request->get('role');
         $user->program =$request->get('program');
         $user->status =$request->get('status');
@@ -118,5 +121,9 @@ class UserRegisterController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);       
+        $user->delete();
+        
+        return redirect('/users')->with('success','Registro Borrado');
     }
 }

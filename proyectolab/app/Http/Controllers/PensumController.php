@@ -62,7 +62,8 @@ class PensumController extends Controller
                 $pensums->save();
                 return redirect('/pensums')->with('success','Pensum Registrado con Exito');
             }else{
-                dd("no es un pdf");
+                return redirect('/pensums')->with('dato-error','No se registro un archivo en formato pdf');
+                //dd("no es un pdf");
             }
         }
     }
@@ -107,12 +108,27 @@ class PensumController extends Controller
         $pensum->descrip_pensum = $request->get('descrip_pensum');
         $pensum->date = $request->get('date');
         $pensum->status = $request->get('status');
+
+        if($request->hasFile('archivo')){
+            
+            $file = $request->file('archivo');
+            $namefile = "pdf_".time().".".$file->guessExtension();
+            $ruta = public_path("pdf/".$namefile);
+
+            if($file->guessExtension() == "pdf"){
+                copy($file, $ruta);
+                $pensum->pdf = $namefile;
+                $pensum->save();
+                return redirect('/pensums')->with('success','Pensum Actualizado con Exito');        
+                
+            }else{
+                return redirect('/pensums')->with('dato-error','No se registro un archivo en formato pdf');
+                //dd("no es un pdf");
+            }
+        }
         $pensum->save();
-
-
-       // return redirect()->route('pensum.registerpensum')->with('success','REGISTRO ACTUALIZADO');
-       
-        return redirect('/pensums')->with('success','Pensum Actualizado con Exito');
+        return redirect('/pensums')->with('success','Pensum Actualizado con Exito');        
+    
     }
 
     /**

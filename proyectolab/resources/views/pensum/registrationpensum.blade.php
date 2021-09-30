@@ -12,6 +12,15 @@
     </div>
     @endif
   
+    @if(session('dato-error'))
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+      {{ session('dato-error') }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times</span>
+      </button>
+    </div>
+    @endif
+
 
     <div class="container">
       <!--  

@@ -2,6 +2,7 @@
 
   @section('MenuPrincipal')
 
+
     <div class="container"> 
       <h2 style="margin-top: 20px;">CREAR REGISTROS</h2>
    
@@ -27,6 +28,7 @@
           <label for="exampleFormControlFile1">Archivo:</label>
           <input type="file" class="form-control-file" id="archivo" name="archivo">
         </div>
+        
         <div class="mb-3">
           <input id="status" name="status" type="hidden" value="A">
         </div>

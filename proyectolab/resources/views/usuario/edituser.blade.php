@@ -114,25 +114,7 @@
                       
                       </div>
                       
-                      <div class="form-group">
-                        <label for="">Contraseña:</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Contraseña" name="password" >
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{$message}}</strong>
-                        </span>
-                        @enderror
-                      </div>
-                      <div class="form-group">
-                        <label for=""> Confirmar Contraseña:</label>
-                        <input type="password" class="form-control @error('confirmationPassword') is-invalid @enderror" id="confirmationPassword" placeholder="Confirmar Contraseña" name="confirmationPassword">
-                        @error('confirmationPassword')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{$message}}</strong>
-                        </span>
-                        @enderror
-                      </div>
-
+                     
 
 
 

@@ -41,12 +41,17 @@ Route::get('/registerprogram','App\Http\Controllers\ProgramController@index')->n
 
 Route::resource('users','App\Http\Controllers\UserRegisterController');
 //->middleware('admin')
+Route::get('/list','App\Http\Controllers\UserRegisterController@index')->name('user.listar');
+
+//Route::get('/register','App\Http\Controllers\UserRegisterController@index')->name('user.register');
 
 
-
-Route::get('/register', function () {
+/*Route::get('/register', function () {
     return view('usuario.registration');
 })->name('user.register');
+*/
+
+
 /*
 ->middleware('admin')
 Route::get('/register','App\Http\Controllers\UserRegisterController@create')

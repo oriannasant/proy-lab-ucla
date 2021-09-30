@@ -70,7 +70,7 @@
             <div class="benv container-fluid">
                 <br>
                 <h1><b>Bienvenido/a.</b></h1>
-                <h3>Te damos la bienvenida al sistema de registro de pensum del programa de Registro Academico de la Universidad Centrooccidental "Lisandro Alvarado"</h3>
+                <h3>Te damos la bienvenida al sistema de registro de pensum del programa de Registro Académico de la Universidad Centrooccidental "Lisandro Alvarado"</h3>
                 <h3>Un entorno amigable y fácil de usar para hacer que tus gestión de pensum sea tan eficiente como sea posible</h3>
                 <h3>Ucla, Una voz del pensamiento</h3>
             </div>

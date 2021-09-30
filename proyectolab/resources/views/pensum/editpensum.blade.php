@@ -16,7 +16,7 @@
 
 
 
-  <form action="/pensums/{{$pensum->id}}" method="POST">
+  <form action="/pensums/{{$pensum->id}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
     @csrf    
     @method('PUT')
     <div class="mb-3">
@@ -37,6 +37,10 @@
       <input id="date" name="date" type="date" class="form-control" value="{{$pensum->date}}">
     </div>
       
+    <div class="mb-3">
+      <label for="exampleFormControlFile1">Archivo:</label>
+      <input type="file" class="form-control-file" id="archivo" name="archivo" value="{{$pensum->pdf}}"">
+    </div>
 
     <div class="mb-3">
       <input id="status" name="status" type="hidden" value="{{$pensum->status}}">
