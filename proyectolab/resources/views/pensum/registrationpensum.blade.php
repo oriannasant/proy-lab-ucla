@@ -43,7 +43,7 @@
               <td>{{$pensum->id_program}}</td>
               <td>{{$pensum->descrip_pensum}}</td>
               <td>{{$pensum->date}}</td>
-              <td>{{$pensum->pdf}}</td>
+              <td><a class="btn btn-info" href="pdf/{{$pensum->pdf}}" target="blank_">PDF</a></td>
                 
               <td>
                 <form action="{{ route('pensums.destroy',$pensum->id) }}" method="POST">
