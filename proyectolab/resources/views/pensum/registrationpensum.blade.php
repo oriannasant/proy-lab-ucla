@@ -29,6 +29,7 @@
             <th scope="col">Código del Programa</th>
             <th scope="col">Descripción del Pensum</th>
             <th scope="col">Fecha</th>
+            <th scope="col">Archivo</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
@@ -42,6 +43,7 @@
               <td>{{$pensum->id_program}}</td>
               <td>{{$pensum->descrip_pensum}}</td>
               <td>{{$pensum->date}}</td>
+              <td>{{$pensum->pdf}}</td>
                 
               <td>
                 <form action="{{ route('pensums.destroy',$pensum->id) }}" method="POST">
@@ -67,7 +69,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form method="POST" action="/pensums">
+              <form method="POST" action="/pensums" accept-charset="UTF-8" enctype="multipart/form-data">
     
                 @csrf
                 <div class="mb-3">
@@ -84,6 +86,12 @@
                   <label for="" class="form-label">Fecha:</label>
                   <input id="date" name="date" type="date" class="form-control">
                 </div>
+
+                <div class="mb-3">
+                  <label for="exampleFormControlFile1">Archivo:</label>
+                  <input type="file" class="form-control-file" id="archivo" name="archivo">
+                </div>
+                
                 <div class="mb-3">
                   <input id="status" name="status" type="hidden" value="A">
                 </div>

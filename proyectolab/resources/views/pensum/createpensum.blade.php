@@ -5,7 +5,7 @@
     <div class="container"> 
       <h2 style="margin-top: 20px;">CREAR REGISTROS</h2>
    
-      <form method="POST" action="/pensums">
+      <form method="POST" action="/pensums" accept-charset="UTF-8" enctype="multipart/form-data">
   
         @csrf
         <div class="mb-3">
@@ -21,6 +21,11 @@
         <div class="mb-3">
           <label for="" class="form-label">Fecha:</label>
           <input id="date" name="date" type="date" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlFile1">Archivo:</label>
+          <input type="file" class="form-control-file" id="archivo" name="archivo">
         </div>
         <div class="mb-3">
           <input id="status" name="status" type="hidden" value="A">

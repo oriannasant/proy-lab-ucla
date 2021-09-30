@@ -18,6 +18,7 @@ class CreatePensumsTable extends Migration
             $table->integer('id_program');
             $table->string('descrip_pensum');
             $table->date('date');
+            $table->string('pdf')->nullable();
             $table->char('status', 2);
             $table->timestamps();
         });

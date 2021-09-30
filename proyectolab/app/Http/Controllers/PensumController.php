@@ -45,13 +45,26 @@ class PensumController extends Controller
     {
         //
         $pensums = new Pensum();
-        $pensums->id_program = $request->get('id_program');
-        $pensums->descrip_pensum = $request->get('descrip_pensum');
-        $pensums->date = $request->get('date');
-        $pensums->status = $request->get('status');
-        $pensums->save();
-        //return redirect()->route('pensum.registerpensum')->with('success','REGISTRO GUARDADO');
-        return redirect('/pensums')->with('success','Pensum Registrado con Exito');
+        
+        if($request->hasFile('archivo')){
+            
+            $file = $request->file('archivo');
+            $namefile = "pdf_".time().".".$file->guessExtension();
+            $ruta = public_path("pdf/".$namefile);
+
+            if($file->guessExtension() == "pdf"){
+                copy($file, $ruta);
+                $pensums->id_program = $request->get('id_program');
+                $pensums->descrip_pensum = $request->get('descrip_pensum');
+                $pensums->date = $request->get('date');
+                $pensums->status = $request->get('status');
+                $pensums->pdf = $namefile;
+                $pensums->save();
+                return redirect('/pensums')->with('success','Pensum Registrado con Exito');
+            }else{
+                dd("no es un pdf");
+            }
+        }
     }
 
     /**

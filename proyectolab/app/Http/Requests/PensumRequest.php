@@ -26,8 +26,8 @@ class PensumRequest extends FormRequest
         return [
             
         'id_program' => 'required',
-        'descrip_pensum' => 'required'
-        //'date'=>'required|max:50|min:2'
+        'descrip_pensum' => 'required',
+        'date'=>'required'
     
         ];
     }
@@ -36,7 +36,7 @@ class PensumRequest extends FormRequest
         return[
         'id_program.required'=>'Ingresar Codigo del Programa',
         'descrip_pensum.required'=>'Ingresar Descripción ',
-        //'date.required'=>'Ingresar Apellido',
+        'date.required'=>'Ingresar Fecha',
         ];
     }
 
