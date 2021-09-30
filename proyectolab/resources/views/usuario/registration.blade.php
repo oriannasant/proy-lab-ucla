@@ -2,23 +2,7 @@
 @extends('layouts.Menu')
 
   @section('MenuPrincipal')
-    <nav class="navbar navbar-dark bg-primary justify-content-end">
-            
-            <h6>Registrar Usuario</h6>
-
-            <h4>|</h4>
-
-            <ul class="nav">
-                
-                   
-              <li class="nav-item ">
-                 <a class="nav-link" href="#" >Volver</a>
-              </li>
-                
-            
-            </ul>
-    </nav>
-    
+        
     @if(session('datos'))
     <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
         {{ session('datos') }}
