@@ -1,35 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-         <meta charset="utf-8"/>
-     <title>Registro Académico del DCYT</title>
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-     <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
-     <link rel="stylesheet" href="/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-     <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
-     <link rel="stylesheet" href="css/login.css">
-     <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="css/menu.css">
+@extends('layouts.Menu')
 
-</head>
-<body>
-  <nav class="navbar navbar-dark bg-primary justify-content-end">
-          
-          <h6>Editar Usuario</h6>
-
-          <h4>|</h4>
-
-          <ul class="nav">
-              
-                 
-            <li class="nav-item ">
-               <a class="nav-link" href="#" >Volver</a>
-            </li>
-              
-          
-          </ul>
-  </nav>
+  @section('MenuPrincipal')
+  
   
   @if(session('datos'))
   <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
@@ -39,8 +11,8 @@
       </button>
   </div>
   @endif
-               <br />
-      <div class=" container">
+    <br />
+      <div class= "container">
 
         <form method="POST" action="/users">
           
@@ -156,5 +128,4 @@
             </form>
       </div>
 
-</body>
-</html>
+    @endsection
