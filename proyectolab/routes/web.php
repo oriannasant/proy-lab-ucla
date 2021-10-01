@@ -43,7 +43,7 @@ Route::resource('users','App\Http\Controllers\UserRegisterController');
 //->middleware('admin')
 Route::get('/list','App\Http\Controllers\UserRegisterController@index')->name('user.listar');
 
-//Route::get('/register','App\Http\Controllers\UserRegisterController@index')->name('user.register');
+Route::get('/register','App\Http\Controllers\UserRegisterController@index')->name('user.register');
 
 
 /*Route::get('/register', function () {
