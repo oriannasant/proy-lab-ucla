@@ -35,13 +35,14 @@ public function login(Request $request){
  
          if(password_verify($password,$hashp)){
                
-                            $rol = $query[0]->role;
-                                if($rol ==1){
-                               
+                          //  $rol = $query[0]->role;
+                              //  if($rol ==1){
+                              // dd($query);
                                     return view('welcomeAdmin');
-                                }else{
-                                    return view('welcome');
-                               }
+                               // }else{
+                                    //dd($query);
+                                   // return view('carpeta.registrationpensum')->with('users',$query);
+                             //  }
          }else {
              return back()->withErrors(['password'=>'Incorrecta contraseña'])->withInput([request('password')]);
          }

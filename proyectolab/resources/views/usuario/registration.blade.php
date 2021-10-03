@@ -110,38 +110,48 @@
 
 
         <div class="form-group">
-          <label for="">Rol:</label>
-          <input type="text" class="form-control @error('role') is-invalid @enderror" id="role" placeholder="Rol" name="role" value="{{old('role')}}">
-          @error('role')
-            <span class="invalid-feedback" role="alert">
-            <strong>{{$message}}</strong>
-            </span>
-          @enderror
+         
+         <label for="" class="form-label">Roles:</label>
+                          
+             <select name="role" id="role" class="form-control">
+                            
+                <option value="">Elegir opción</option>
+                            
+                   @foreach ($roles as $rol)
+                      <option value="{{$rol->id}}">{{ $rol->name_roles}}</option>
+                    @endforeach
+                          
+             </select>
         </div>
-
 
 
         <div class="form-group">
-          <label for="">Programa:</label>
-          <input type="text" class="form-control @error('program') is-invalid @enderror" id="program" placeholder="Programa" name="program" value="{{old('program')}}">
-          @error('program')
-            <span class="invalid-feedback" role="alert">
-              <strong>{{$message}}</strong>
-            </span>
-          @enderror
+          <label for="" class="form-label">Código del Programa:</label>
+         
+                          
+          <select name="program" id="program" class="form-control">
+                        
+            <option value="">Elegir opción</option>
+                        
+                @foreach ($programs as $program)
+                              
+                  <option value="{{ $program->id}}">{{ $program->name_program }}</option>
+                 
+                @endforeach
+                      
+          </select>
+         
         </div>
+      
                      
         <div class="form-group">
           <input id="status" name="status" type="hidden" value="A">
         </div>
         
-        <hr />
+
               
         <button type="submit" class="btn btn-primary" >Guardar</button>
-                    
-                 
-        <hr />
-                         
+                       
       </form>
     </div>
   

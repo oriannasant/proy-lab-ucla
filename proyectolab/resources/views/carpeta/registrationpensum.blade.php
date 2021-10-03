@@ -38,7 +38,6 @@
             <th scope="col">Código del Programa</th>
             <th scope="col">Descripción del Pensum</th>
             <th scope="col">Fecha</th>
-            <th scope="col">Código del Departamento</th>
             <th scope="col">Archivo</th>
             <th scope="col">Acciones</th>
           </tr>
@@ -46,14 +45,13 @@
   
 
         <tbody>    
-          @foreach ($pensums as $pensum)
+          @foreach ($resultado as $pensum)
             <tr>
                     
               <td>{{$pensum->id}}</td>
               <td>{{$pensum->id_program}}</td>
               <td>{{$pensum->descrip_pensum}}</td>
               <td>{{$pensum->date}}</td>
-              <td>{{$pensum->id_departament}}</td>
               <td><a class="btn btn-info" href="pdf/{{$pensum->pdf}}" target="blank_">PDF</a></td>
                 
               <td>
@@ -97,12 +95,6 @@
                   <label for="" class="form-label">Fecha:</label>
                   <input id="date" name="date" type="date" class="form-control">
                 </div>
-                
-                <div class="mb-3">
-                  <label for="" class="form-label">Código del Departamento:</label>
-                  <input id="id_departament" name="id_departament" type="number" class="form-control" >    
-                  
-                </div>
 
                 <div class="mb-3">
                   <label for="exampleFormControlFile1">Archivo:</label>
@@ -113,7 +105,7 @@
                   <input id="status" name="status" type="hidden" value="A">
                 </div>
                 
-                <a href="/pensums" class="btn btn-danger" data-bs-dismiss="modal" tabindex="5">Cancelar</a>
+                <a href="#" class="btn btn-danger" data-bs-dismiss="modal" tabindex="5">Cancelar</a>
                 <button type="submit" class="btn btn-success" tabindex="4">Guardar</button>
               </form>
             

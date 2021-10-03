@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-//use Illuminate\Http\Request;
+//use App\Models\Rol;
+use App\Models\Program;
 use App\Http\Requests\LoginRequest;
 
 class UserRegisterController extends Controller
@@ -16,7 +17,10 @@ class UserRegisterController extends Controller
     {
         //
         $users = User::all();
+       // $roles = Rol::all();
         return view('usuario.listuser')->with('users',$users);
+        //->with('roles',$roles)
+        
     }
 
     /**
@@ -27,9 +31,12 @@ class UserRegisterController extends Controller
     public function create()
     {
         //
-        //$users = User::all();
-       // return view('usuario.registration')->with('users',$users);
-       return view('usuario.registration');
+       
+     //  $roles = Rol::all();
+       $programs = Program::all();
+       return view('usuario.registration')->with('programs',$programs);
+     //  ->with('roles',$roles)
+       
     
     }
 

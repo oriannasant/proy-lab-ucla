@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePensumsTable extends Migration
+class CreateDepartamentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreatePensumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pensums', function (Blueprint $table) {
+        Schema::create('departaments', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_program');
-            $table->string('descrip_pensum');
-            $table->date('date');
-            $table->integer('id_departament')->nullable();
-            $table->string('pdf')->nullable();
+            $table->string('name_departament');
+            $table->string('descrip_departament')->nullable();
             $table->char('status', 2);
             $table->timestamps();
         });
@@ -32,6 +29,6 @@ class CreatePensumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pensums');
+        Schema::dropIfExists('departaments');
     }
 }

@@ -66,8 +66,8 @@
                                 <i class="fas fa-file-alt"><b> Gestión de Pensum </b></i></a>
                                 </a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                                    <li><a class="dropdown-item" href="pensums/create"><i class="fas fa-plus-circle"> Añadir Pensum</i></a></li>
-                                    <li><a class="dropdown-item" href="{{route('pensum.registerpensum')}}"><i class="fas fa-book-open"> Listado de Pensum</i></a></li>
+                                    
+                                    <li><a class="dropdown-item" href="{{route('pensum.registerpensumprograma')}}"><i class="fas fa-book-open"> Listado de Pensum</i></a></li>
                                 </ul>
                             </li>
 

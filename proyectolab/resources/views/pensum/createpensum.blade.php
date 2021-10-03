@@ -11,12 +11,20 @@
         @csrf
         <div class="mb-3">
           <label for="" class="form-label">Código del Programa:</label>
-          <input id="id_program" name="id_program" type="number" class="form-control  @error('id_program') is-invalid @enderror" tabindex="1">    
-          @error('id_program')
-          <span class="invalid-feedback" role="alert">
-              <strong>{{$message}}</strong>
-          </span>
-          @enderror
+         
+                          
+          <select name="id_program" id="id_program" class="form-control">
+                        
+            <option value="">Elegir opción</option>
+                        
+                @foreach ($programs as $program)
+                              
+                  <option value="{{ $program->id}}">{{ $program->name_program }}</option>
+                 
+                @endforeach
+                      
+          </select>
+         
         </div>
 
         <div class="mb-3">
@@ -27,6 +35,25 @@
         <div class="mb-3">
           <label for="" class="form-label">Fecha:</label>
           <input id="date" name="date" type="date" class="form-control">
+        </div>
+
+        <div class="mb-3">
+         
+          <label for="" class="form-label">Código del Departamento:</label>
+                          
+              <select name="id_departament" id="id_departament" class="form-control">
+                            
+                <option value="">Elegir opción</option>
+                            
+                    @foreach ($departaments as $departament)
+                                  
+                      <option value="{{ $departament->id}}">{{ $departament->name_departament }}</option>
+                     
+                    @endforeach
+                          
+              </select>
+                 
+          
         </div>
 
         <div class="mb-3">

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Pensum;
-use App\Models\Departament;
-use App\Models\Program;
+use App\Models\User;
 use App\Http\Requests\PensumRequest;
-class PensumController extends Controller
+
+
+class PensumProgramaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +16,12 @@ class PensumController extends Controller
     public function index()
     {
         
-       
-        //cargar los pensums segun programa ya que el usuario que ingrese
-        //no puede ver los pensums de otros progrmas que no sea el de el
-        $pensums = Pensum::all();
-        //return view('registrationpensum')->with('pensums',$pensums);
-        return view('pensum.registrationpensum')->with('pensums',$pensums);
+       // $pensums = Pensum::all();
+       // $user = User::where("role","=",2)->select("id","program");
+      //  $id_program = $user; 
+        //$resultado = User::where("id_program","=",$id_program);
+      //  dd($user);
+       // return view('carpeta.registrationpensum')->with('resultado',$resultado);
     
     }
 
@@ -33,11 +34,7 @@ class PensumController extends Controller
     public function create()
     {
         //
-        $departaments = Departament::all();
-        $programs = Program::all();
-        return view('pensum.createpensum')
-        ->with('departaments',$departaments)
-        ->with('programs',$programs);
+       // return view('pensum.createpensum');
     }
 
     /**
@@ -62,7 +59,6 @@ class PensumController extends Controller
                 $pensums->id_program = $request->get('id_program');
                 $pensums->descrip_pensum = $request->get('descrip_pensum');
                 $pensums->date = $request->get('date');
-                $pensums->id_departament = $request->get('id_departament');
                 $pensums->status = $request->get('status');
                 $pensums->pdf = $namefile;
                 $pensums->save();
@@ -95,7 +91,7 @@ class PensumController extends Controller
     {
         //
         $pensum = Pensum::find($id);
-        return view('pensum.editpensum')->with('pensum',$pensum);
+        //return view('pensum.editpensum')->with('pensum',$pensum);
         
     }
 
@@ -113,7 +109,6 @@ class PensumController extends Controller
         $pensum->id_program = $request->get('id_program');
         $pensum->descrip_pensum = $request->get('descrip_pensum');
         $pensum->date = $request->get('date');
-        $pensum->id_departament = $request->get('id_departament');
         $pensum->status = $request->get('status');
 
         if($request->hasFile('archivo')){

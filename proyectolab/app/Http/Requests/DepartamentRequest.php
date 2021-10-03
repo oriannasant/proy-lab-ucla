@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PensumRequest extends FormRequest
+class DepartamentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,22 +24,14 @@ class PensumRequest extends FormRequest
     public function rules()
     {
         return [
-            
-        'id_program' => 'required',
-        'descrip_pensum' => 'required',
-        'date'=>'required',
-        'id_departament' => 'required'
-    
+         
+            'name_departament' => 'required|max:100|min:2'
         ];
     }
-
     public function messages(){
         return[
-        'id_program.required'=>'Ingresar Código del Programa',
-        'descrip_pensum.required'=>'Ingresar Descripción ',
-        'date.required'=>'Ingresar Fecha',
-        'id_departament.required' =>'Ingresar Código del Departamento',
+        'name_departament.required'=>'Ingresar Nombre del Deparamento',
+       
         ];
     }
-
 }

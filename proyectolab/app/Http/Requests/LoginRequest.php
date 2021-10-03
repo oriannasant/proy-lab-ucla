@@ -40,10 +40,10 @@ class LoginRequest extends FormRequest
         'username.required'=>'Ingresar Usuario',
         'name.required'=>'Ingresar Nombre',
         'surname.required'=>'Ingresar Apellido',
-        'identification'=>'Ingresar Cedula',
+        'identification'=>'Ingresar Cédula',
         'telephone'=>'Solo se permiten maximo 10 caracteres',
-        'email.required'=>'Ingresar Correo con maximo de 35 caracteres y minimo 4',
-        'password.required'=>'Ingresar Contraseña con maximo de 35 caracteres y minimo 4',
+        'email.required'=>'Ingresar Correo con máximo de 35 caracteres y mínimo 4',
+        'password.required'=>'Ingresar Contraseña con máximo de 35 caracteres y mínimo 4',
         'role'=> 'Seleccione un Rol',
         'program'=> 'Seleccione un Programa',
         ];

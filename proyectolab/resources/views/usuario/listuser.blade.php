@@ -184,13 +184,20 @@
       
       
               <div class="mb-3">
-                <label for="">Programa:</label>
-                <input type="text" class="form-control @error('program') is-invalid @enderror" id="program" placeholder="Programa" name="program" value="{{old('program')}}">
-                @error('program')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{$message}}</strong>
-                  </span>
-                @enderror
+                <label for="" class="form-label">Código del Programa:</label>
+         
+                          
+                <select name="program" id="program" class="form-control">
+                              
+                  <option value="">Elegir opción</option>
+                              
+                      @foreach ($programs as $program)
+                                    
+                        <option value="{{ $program->id}}">{{ $program->name_program }}</option>
+                       
+                      @endforeach
+                            
+                </select>
               </div>
                            
               <div class="mb-3">
