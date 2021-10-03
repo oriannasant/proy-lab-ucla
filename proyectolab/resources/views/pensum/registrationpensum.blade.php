@@ -1,6 +1,6 @@
-@extends('layouts.Menu')
 
-  @section('MenuPrincipal')
+@extends('layouts.Menu')
+    @section('MenuPrincipal')
 
 
     @if(session('success'))
