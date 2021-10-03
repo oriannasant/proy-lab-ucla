@@ -18,7 +18,10 @@ class UserRegisterController extends Controller
         //
         $users = User::all();
        // $roles = Rol::all();
-        return view('usuario.listuser')->with('users',$users);
+       $programs = Program::all();
+        return view('usuario.listuser')
+        ->with('users',$users)
+        ->with('programs',$programs);
         //->with('roles',$roles)
         
     }

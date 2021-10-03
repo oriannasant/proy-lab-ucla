@@ -33,7 +33,11 @@ Route::resource('pensums','App\Http\Controllers\PensumController');
 
 Route::get('/registerpensum','App\Http\Controllers\PensumController@index')->name('pensum.registerpensum');
 
+/* para la vista del rol 2
+Route::resource('pensums','App\Http\Controllers\PensumController');
 
+Route::get('/registerpensum','App\Http\Controllers\PensumController@index')->name('pensum.registerpensum');
+*/
 Route::resource('programs','App\Http\Controllers\ProgramController');
 
 Route::get('/registerprogram','App\Http\Controllers\ProgramController@index')->name('program.registerprogram');

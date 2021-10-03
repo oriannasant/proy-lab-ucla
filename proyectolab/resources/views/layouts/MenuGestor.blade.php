@@ -21,6 +21,11 @@
     </head>
 
     <body class="antialiased">
+
+        @foreach ($users as $item)
+       <li>{{ $item->program }}</li> 
+            
+        @endforeach
         
         <nav class="navbar navbar-dark bg-primary">
                        
@@ -66,12 +71,8 @@
                                 <i class="fas fa-file-alt"><b> Gestión de Pensum </b></i></a>
                                 </a>
                                 <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-<<<<<<< HEAD
                                     
-                                    <li><a class="dropdown-item" href="{{route('pensum.registerpensumprograma')}}"><i class="fas fa-book-open"> Listado de Pensum</i></a></li>
-=======
                                     <li><a class="dropdown-item" href="{{route('pensum.registerpensum')}}"><i class="fas fa-book-open"> Listado de Pensum</i></a></li>
->>>>>>> 6dc0da1c1565e2ac4bcc973c85be5c90cda9e513
                                 </ul>
                             </li>
 
