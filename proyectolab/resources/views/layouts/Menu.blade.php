@@ -93,6 +93,16 @@
                                 </ul>
                             </li>
 
+                            @csrf
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-hotel"> <b> Gestión de Departamento </b></i></a>
+                                </a>
+                                <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="{{route('departament.registerdepartament')}}"><i class="fas fa-book-open"> Listado de Departamentos</i></a></li>
+                                </ul>
+                            </li>
+
                             
                         </ul>
                     </div>
