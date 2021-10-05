@@ -228,17 +228,14 @@
 
                       <div class="form-group">
          
-                        <label for="">Roles:</label>
+                        <label for="">Roles: Recuerde 1-Administrador 2- Gestor de Programa</label>
                                          
-                                         <select name="role" id="role" class="form-control">
-                                           
-                                           <option value="">Elegir opción</option>
-                                           
-                                               @foreach ($roles as $rol)
-                                                 <option value="{{ $rol->id}}">{{ $rol->name_roles}}</option>
-                                               @endforeach
-                                         
-                                         </select>
+                        <input type="text" class="form-control @error('role') is-invalid @enderror" id="role" placeholder="Rol de Usuario" name="role" value="{{old('role')}}">
+                          @error('role')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{$message}}</strong>
+                          </span>
+                          @enderror
                        </div>
                
                
